@@ -1,85 +1,809 @@
-/* RESET */
+/* =============================================
+   RESET
+   ============================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
+/* =============================================
+   BODY
+   ============================================= */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #0a1f14;
+  background-color: #0a1628;
   background-image:
-    radial-gradient(ellipse at 15% 50%, rgba(20,80,50,0.4) 0%, transparent 60%),
-    radial-gradient(ellipse at 85% 10%, rgba(100,220,100,0.06) 0%, transparent 50%);
+    radial-gradient(ellipse at 15% 50%, rgba(20, 80, 50, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse at 85% 10%, rgba(100, 220, 100, 0.06) 0%, transparent 50%);
   color: #f0f4ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* HEADER */
+/* =============================================
+   HEADER  —  usado em TODAS as páginas
+   ============================================= */
 header {
-  background: rgba(10, 20, 40, 0.9);
-  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(10, 20, 40, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(74, 222, 128, 0.1);
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #4ade80;
+  letter-spacing: -0.5px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+header nav a {
+  color: #c8d8f0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #4ade80;
+}
+
+header nav span {
+  color: #4ade80;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* =============================================
+   FOOTER  —  usado em TODAS as páginas
+   ============================================= */
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: #8899bb;
+  font-size: 0.82rem;
+}
+
+/* =============================================
+   BOTÕES GLOBAIS
+   ============================================= */
+.btn-primario {
+  background: #4ade80;
+  color: #0a1628;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  display: inline-block;
+}
+
+.btn-primario:hover {
+  background: #22c55e;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(74, 222, 128, 0.3);
+}
+
+.btn-secundario {
+  background: transparent;
+  color: #4ade80;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btn-secundario:hover {
+  background: rgba(74, 222, 128, 0.1);
+  transform: translateY(-2px);
+}
+
+/* =============================================
+   BARRAS DE PROGRESSO GLOBAIS
+   ============================================= */
+.progresso-barra-fundo {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progresso-barra {
+  height: 100%;
+  background: linear-gradient(90deg, #4ade80, #22c55e);
+  border-radius: 50px;
+  transition: width 1s ease;
+}
+
+.progresso-texto {
+  font-size: 0.78rem;
+  color: #4ade80;
+  margin-top: 5px;
+}
+
+/* =============================================
+   INDEX.HTML  —  Hero, Números, Features, CTA
+   ============================================= */
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 160px 20px 80px;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.destaque {
+  color: #4ade80;
+}
+
+.hero p {
+  color: #8899bb;
+  font-size: 1.1rem;
+  margin-bottom: 36px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Números */
+#numeros {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  flex-wrap: wrap;
+}
+
+.num-item {
   text-align: center;
 }
 
-/* FORM LAYOUT */
+.num-item strong {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #4ade80;
+}
+
+.num-item span {
+  color: #8899bb;
+  font-size: 0.9rem;
+}
+
+/* Funcionalidades */
+#funcionalidades {
+  padding: 80px 40px;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#funcionalidades h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 48px;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Card genérico — usado em index, cursos, dashboard */
+.card {
+  background: rgba(15, 36, 71, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: left;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(74, 222, 128, 0.25);
+}
+
+.card .icone {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #8899bb;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* CTA */
+#cta {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(74,222,128,0.05), rgba(26,58,110,0.2));
+  border-top: 1px solid rgba(74, 222, 128, 0.08);
+}
+
+#cta h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+#cta p {
+  color: #8899bb;
+  margin-bottom: 32px;
+}
+
+/* =============================================
+   LOGIN + CADASTRO  —  Formulários
+   ============================================= */
 .pagina-form {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  min-height: 100vh;
+  padding-top: 80px; /* compensa o header fixo */
 }
 
 .caixa-form {
-  background: rgba(20, 80, 50, 0.25);
-  padding: 30px;
-  border-radius: 16px;
-  width: 320px;
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(15, 36, 71, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 400px;
+  backdrop-filter: blur(8px);
 }
 
-/* TITULO */
 .caixa-form h2 {
   text-align: center;
-  margin-bottom: 20px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 28px;
 }
 
-/* INPUTS */
-input {
+.grupo-campo {
+  margin-bottom: 18px;
+}
+
+.grupo-campo label {
+  display: block;
+  font-size: 0.85rem;
+  color: #8899bb;
+  margin-bottom: 6px;
+}
+
+.grupo-campo input,
+input[type="text"],
+input[type="email"],
+input[type="password"] {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: none;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #f0f4ff;
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+  outline: none;
 }
 
-/* BOTÃO */
-button {
+.grupo-campo input:focus,
+input:focus {
+  border-color: rgba(74, 222, 128, 0.5);
+}
+
+input::placeholder {
+  color: #556688;
+}
+
+/* Botão dentro do form */
+.btn-form {
   width: 100%;
-  padding: 12px;
-  background: #f5c842;
-  color: #0a1628;
-  border: none;
-  border-radius: 50px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+  margin-top: 10px;
+  padding: 14px;
+  font-size: 1rem;
 }
 
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(245,200,66,0.4);
+/* Link abaixo do form */
+.link-form {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.88rem;
+  color: #8899bb;
 }
 
-/* MENSAGENS */
+.link-form a {
+  color: #4ade80;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-form a:hover {
+  text-decoration: underline;
+}
+
+/* Mensagens de feedback */
 .mensagem {
   color: #4ade80;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
 }
 
 .erro {
   color: #f87171;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+/* =============================================
+   CURSOS.PHP  —  Listagem de cursos
+   ============================================= */
+.cursos-hero {
+  text-align: center;
+  padding: 140px 20px 60px;
+}
+
+.cursos-hero h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.cursos-hero p {
+  color: #8899bb;
+}
+
+.cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+}
+
+.curso-card {
+  background: rgba(15, 36, 71, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-decoration: none;
+  color: #f0f4ff;
+  transition: transform 0.3s, border-color 0.3s;
+  display: block;
+}
+
+.curso-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(74, 222, 128, 0.3);
+}
+
+.curso-icone {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.curso-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.curso-card p {
+  color: #8899bb;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* =============================================
+   CURSO.PHP  —  Detalhes e disciplinas
+   ============================================= */
+.curso-hero {
+  text-align: center;
+  padding: 140px 20px 60px;
+  background: linear-gradient(135deg, rgba(74,222,128,0.08), rgba(26,58,110,0.3));
+  border-bottom: 1px solid rgba(74, 222, 128, 0.1);
+}
+
+.curso-hero .icone-grande {
+  font-size: 5rem;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.curso-hero h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.curso-hero p {
+  color: #8899bb;
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.disciplinas-secao {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.disciplinas-secao h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 32px;
+}
+
+.disciplina-item {
+  background: rgba(15, 36, 71, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-color 0.3s, transform 0.3s;
+  text-decoration: none;
+  color: #f0f4ff;
+}
+
+.disciplina-item:hover {
+  border-color: rgba(74, 222, 128, 0.3);
+  transform: translateX(6px);
+}
+
+.disciplina-nome {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.disciplina-desc {
+  color: #8899bb;
+  font-size: 0.85rem;
+}
+
+.disciplina-seta {
+  color: #4ade80;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+/* =============================================
+   DISCIPLINA.PHP  —  Conteúdo da disciplina
+   ============================================= */
+.disciplina-hero {
+  text-align: center;
+  padding: 140px 20px 50px;
+  background: linear-gradient(135deg, rgba(74,222,128,0.08), rgba(26,58,110,0.3));
+  border-bottom: 1px solid rgba(74, 222, 128, 0.1);
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: #8899bb;
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: #4ade80;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.disciplina-hero h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.disciplina-hero > p {
+  color: #8899bb;
+  font-size: 1rem;
+}
+
+/* Secção de progresso */
+.progresso-secao {
+  max-width: 900px;
+  margin: 40px auto 0;
+  padding: 0 40px;
+}
+
+.progresso-topo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.progresso-topo span:last-child {
+  color: #4ade80;
+  font-weight: 700;
+}
+
+/* Botões de progresso */
+.progresso-botoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-progresso {
+  padding: 8px 18px;
+  border-radius: 50px;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  background: transparent;
+  color: #4ade80;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: auto; /* evita que herde width:100% do button global */
+}
+
+.btn-progresso:hover {
+  background: #4ade80;
+  color: #0a1628;
+  font-weight: 700;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Conteúdo principal */
+.conteudo-principal {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.secao-titulo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Resumo */
+.resumo-box {
+  background: rgba(15, 36, 71, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 40px;
+  line-height: 1.8;
+  color: #c8d8f0;
+}
+
+.resumo-box h4 {
+  color: #4ade80;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+/* Vídeos */
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.video-card {
+  background: rgba(15, 36, 71, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+.video-info {
+  padding: 16px;
+}
+
+.video-titulo {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.video-duracao {
+  color: #8899bb;
+  font-size: 0.8rem;
+}
+
+/* PDFs */
+.pdf-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.pdf-item {
+  background: rgba(15, 36, 71, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-color 0.3s;
+}
+
+.pdf-item:hover {
+  border-color: rgba(74, 222, 128, 0.3);
+}
+
+.pdf-nome {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.pdf-tamanho {
+  color: #8899bb;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.btn-download {
+  background: #4ade80;
+  color: #0a1628;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+
+.btn-download:hover {
+  background: #22c55e;
+}
+
+/* =============================================
+   DASHBOARD.PHP
+   ============================================= */
+.dashboard {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 40px 80px; /* compensa header fixo */
+}
+
+.dashboard-topo {
+  margin-bottom: 40px;
+}
+
+.dashboard-topo h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.dashboard-topo p {
+  color: #8899bb;
+}
+
+/* Cards do dashboard herdam .card + .grid-cards */
+
+/* =============================================
+   RESPONSIVO — Mobile
+   ============================================= */
+@media (max-width: 768px) {
+  header {
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  header nav {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  #numeros {
+    gap: 32px;
+  }
+
+  .disciplinas-secao,
+  .conteudo-principal,
+  .progresso-secao,
+  .dashboard {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .pdf-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .caixa-form {
+    margin: 0 16px;
+    padding: 28px 20px;
+  }
 }

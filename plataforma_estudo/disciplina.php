@@ -394,19 +394,18 @@ $percentagem = $progresso ? $progresso['percentagem'] : 0;
     <p class="footer-copy">© 2026 AcademiaPro</p>
   </footer>
 
-  <script>
-   
-      document.getElementById('barra').style.width = percentagem + '%';
-      document.getElementById('percentagem-texto').textContent = percentagem + '% concluído';
+ <script>
+  function actualizarProgresso(percentagem) {
+    document.getElementById('barra').style.width = percentagem + '%';
+    document.getElementById('percentagem-texto').textContent = percentagem + '% concluído';
 
-      // Envia para o servidor para guardar na base de dados
-      fetch('guardar_progresso.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: 'disciplina_id=<?php echo $disciplina_id; ?>&percentagem=' + percentagem
-      });
-    }
-  </script>
+    fetch('guardar_progresso.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'disciplina_id=<?php echo $disciplina_id; ?>&percentagem=' + percentagem
+    });
+  }
+</script>
 
 </body>
 </html>
