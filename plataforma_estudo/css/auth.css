@@ -1,0 +1,26 @@
+.pagina-form { ... }
+
+.caixa-form { ... }
+
+.caixa-form h2 { ... }
+
+.grupo-campo { ... }
+
+.grupo-campo label { ... }
+
+input,
+input[type="text"],
+input[type="email"],
+input[type="password"] { ... }
+
+input:focus { ... }
+
+.btn-form { ... }
+
+.link-form { ... }
+
+.link-form a { ... }
+
+.mensagem { ... }
+
+.erro { ... }
