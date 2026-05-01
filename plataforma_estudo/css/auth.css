@@ -1,26 +1,230 @@
-.pagina-form { ... }
+/* =========================================
+   RESET
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.caixa-form { ... }
+/* =========================================
+   BODY
+========================================= */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0a1628;
+  background-image:
+    radial-gradient(ellipse at 15% 50%, rgba(20, 80, 50, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse at 85% 10%, rgba(100, 220, 100, 0.06) 0%, transparent 50%);
+  color: #f0f4ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-.caixa-form h2 { ... }
+/* =========================================
+   HEADER
+========================================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 
-.grupo-campo { ... }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-.grupo-campo label { ... }
+  padding: 18px 40px;
+  background: rgba(10, 20, 40, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(74, 222, 128, 0.1);
+  z-index: 100;
+}
 
-input,
-input[type="text"],
-input[type="email"],
-input[type="password"] { ... }
+header h1 {
+  color: #4ade80;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
 
-input:focus { ... }
+header nav {
+  display: flex;
+  gap: 24px;
+}
 
-.btn-form { ... }
+header nav a {
+  text-decoration: none;
+  color: #c8d8f0;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
 
-.link-form { ... }
+header nav a:hover {
+  color: #4ade80;
+}
 
-.link-form a { ... }
+/* =========================================
+   FORM
+========================================= */
+.pagina-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 100px;
+}
 
-.mensagem { ... }
+.caixa-form {
+  width: 100%;
+  max-width: 420px;
 
-.erro { ... }
+  background: rgba(15, 36, 71, 0.7);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+
+  padding: 40px 32px;
+  backdrop-filter: blur(10px);
+}
+
+.caixa-form h2 {
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+/* =========================================
+   CAMPOS
+========================================= */
+.grupo-campo {
+  margin-bottom: 18px;
+}
+
+.grupo-campo label {
+  display: block;
+  font-size: 0.85rem;
+  color: #8899bb;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 16px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+
+  background: rgba(255,255,255,0.05);
+  color: #f0f4ff;
+
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #4ade80;
+  box-shadow: 0 0 10px rgba(74,222,128,0.2);
+}
+
+input::placeholder {
+  color: #8899bb;
+}
+
+/* =========================================
+   BOTÃO
+========================================= */
+.btn-form {
+  width: 100%;
+  margin-top: 10px;
+
+  padding: 14px;
+  border: none;
+  border-radius: 50px;
+
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  color: #0a1628;
+
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(74,222,128,0.3);
+}
+
+/* =========================================
+   LINK
+========================================= */
+.link-form {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #8899bb;
+}
+
+.link-form a {
+  color: #4ade80;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-form a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+@media (max-width: 500px) {
+  .caixa-form {
+    margin: 0 16px;
+    padding: 28px 20px;
+  }
+}
+
+/* =========================================
+   RESET
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   BODY (logout simples)
+========================================= */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0a1628;
+  background-image:
+    radial-gradient(circle at center, rgba(74,222,128,0.08), transparent 60%);
+  color: #f0f4ff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+}
+
+/* =========================================
+   LOADING / MENSAGEM
+========================================= */
+body::before {
+  content: "A terminar sessão...";
+  font-size: 1.2rem;
+  color: #4ade80;
+  font-weight: 700;
+
+  animation: fade 1.2s infinite alternate;
+}
+
+/* animação simples */
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
