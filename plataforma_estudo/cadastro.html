@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - AcademiaPro</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>AcademiaPro</h1>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="login.html">Login</a>
+  </nav>
+</header>
+
+<main class="pagina-form">
+  <div class="caixa-form">
+    <h2>Criar conta</h2>
+
+    <p id="mensagem-erro" style="color:#f87171; display:none;">
+      ⚠️ Este email já está registado.
+    </p>
+
+    <form id="formCadastro">
+      <input type="text" name="nome" placeholder="Nome" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="senha" placeholder="Senha" required>
+
+      <button type="submit">Criar conta</button>
+    </form>
+
+    <p style="margin-top:16px; text-align:center; color:#8899bb;">
+      Já tens conta? <a href="login.html" style="color:#4ade80;">Entrar</a>
+    </p>
+  </div>
+</main>
+
+<script>
+document.getElementById("formCadastro").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const nome = this.nome.value;
+  const email = this.email.value;
+  const senha = this.senha.value;
+
+  let utilizadores = JSON.parse(localStorage.getItem("utilizadores")) || [];
+
+  // verificar se email já existe
+  let existe = utilizadores.find(u => u.email === email);
+
+  if (existe) {
+    document.getElementById("mensagem-erro").style.display = "block";
+    return;
+  }
+
+  // guardar novo utilizador
+  utilizadores.push({ nome, email, senha });
+  localStorage.setItem("utilizadores", JSON.stringify(utilizadores));
+
+  // guardar flag de sucesso
+  localStorage.setItem("cadastro_sucesso", "true");
+
+  // redirecionar
+  window.location.href = "login.html";
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>A sair...</title>
+</head>
+<body>
+
+<script>
+// limpar dados de sessão simulada
+localStorage.removeItem("utilizador_logado");
+
+// opcional: limpar tudo (se quiser logout total)
+// localStorage.clear();
+
+// redirecionar para login
+window.location.href = "login.html";
+</script>
+
+</body>
+</html>

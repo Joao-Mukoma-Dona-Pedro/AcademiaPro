@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — AcademiaPro</title>
+  <link rel="stylesheet" href="css/style.css">
+ 
+</head>
+<body>
+
+  <header>
+    <h1>AcademiaPro</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="cadastro.html">Criar conta</a>
+    </nav>
+  </header>
+
+  <main class="pagina-form">
+    <div class="caixa-form">
+      <h2>Bem-vindo de volta</h2>
+
+      <!-- Mensagem de sucesso (ativa manualmente se quiseres) -->
+      <!--
+      <p style="color:#4ade80; margin-bottom:16px;">
+        ✅ Conta criada com sucesso! Entra agora.
+      </p>
+      -->
+
+      <!-- Mensagem de erro (exemplo) -->
+      <!--
+      <p style="color:#f87171; margin-bottom:16px;">
+        ⚠️ Email ou senha incorretos.
+      </p>
+      -->
+
+      <form action="#" method="POST">
+        <div class="grupo-campo">
+          <label>Email</label>
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="O teu email" 
+            required>
+        </div>
+
+        <div class="grupo-campo">
+          <label>Senha</label>
+          <input 
+            type="password" 
+            name="senha" 
+            placeholder="A tua senha" 
+            required>
+        </div>
+
+        <button type="submit" class="btn-primario btn-form">Entrar</button>
+      </form>
+
+      <p class="link-form">
+        Não tens conta? <a href="cadastro.html">Criar conta</a>
+      </p>
+    </div>
+  </main>
+
+</body>
+</html>

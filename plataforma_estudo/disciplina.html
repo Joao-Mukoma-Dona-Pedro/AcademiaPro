@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disciplina — AcademiaPro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>AcademiaPro</h1>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="cursos.html">Cursos</a>
+    <a href="biblioteca.html">Biblioteca</a>
+    <a href="#">João</a>
+    <a href="#">Sair</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="disciplina-hero">
+  <p class="breadcrumb">
+    <a href="cursos.html">Cursos</a> → 
+    <a href="#">Matemática</a> → 
+    Álgebra
+  </p>
+
+  <h2>Álgebra</h2>
+  <p>Estudo de equações, expressões e estruturas matemáticas.</p>
+</div>
+
+<!-- PROGRESSO -->
+<div class="progresso-secao">
+  <div class="progresso-topo">
+    <span>O teu progresso nesta disciplina</span>
+    <span id="percentagem-texto">0% concluído</span>
+  </div>
+
+  <div class="progresso-barra-fundo">
+    <div class="progresso-barra" id="barra" style="width: 0%;"></div>
+  </div>
+
+  <div class="progresso-botoes">
+    <button class="btn-progresso" onclick="actualizarProgresso(25)">25%</button>
+    <button class="btn-progresso" onclick="actualizarProgresso(50)">50%</button>
+    <button class="btn-progresso" onclick="actualizarProgresso(75)">75%</button>
+    <button class="btn-progresso" onclick="actualizarProgresso(100)">✅ Concluído</button>
+  </div>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="conteudo-principal">
+
+  <h3 class="secao-titulo">Resumos</h3>
+  <div class="resumo-box">
+    <h4>Introdução</h4>
+    <p>Conteúdo de exemplo da disciplina.</p>
+
+    <h4>Conceitos principais</h4>
+    <p>Equações, variáveis, funções, etc.</p>
+  </div>
+
+  <!-- VÍDEOS -->
+  <h3 class="secao-titulo">Vídeo-aulas</h3>
+  <div class="videos-grid">
+
+    <div class="video-card">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <p class="video-titulo">Aula 1 — Introdução</p>
+        <p class="video-duracao">15 minutos</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PDFs -->
+  <h3 class="secao-titulo">Materiais</h3>
+  <div class="pdf-lista">
+
+    <div class="pdf-item">
+      <div>
+        <p class="pdf-nome">Resumo Completo</p>
+        <p class="pdf-tamanho">PDF • 2.4 MB</p>
+      </div>
+      <a href="livros/resumo.pdf" download class="btn-download">⬇️ Descarregar</a>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  <p class="footer-copy">© 2026 AcademiaPro</p>
+</footer>
+
+<script>
+function actualizarProgresso(percentagem) {
+  document.getElementById('barra').style.width = percentagem + '%';
+  document.getElementById('percentagem-texto').textContent = percentagem + '% concluído';
+
+  // guardar no navegador (simulação)
+  localStorage.setItem('progresso_disciplina', percentagem);
+}
+
+// carregar progresso ao abrir
+window.onload = function() {
+  let progresso = localStorage.getItem('progresso_disciplina') || 0;
+  actualizarProgresso(progresso);
+}
+</script>
+
+</body>
+</html>
