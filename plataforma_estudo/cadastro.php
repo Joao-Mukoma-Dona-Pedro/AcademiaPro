@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <title>Cadastro</title>
 
   <!-- CSS correto -->
-  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="estilo/estilo.css">
 </head>
 
 <body>
