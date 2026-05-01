@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro - AcademiaPro</title>
-  <link rel="stylesheet" href="style.css">  <!-- caminho corrigido -->
+  <link rel="stylesheet" href="../estilo/stilo.css">  <!-- caminho corrigido -->
 </head>
 <body>
 
