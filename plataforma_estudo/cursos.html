@@ -3,61 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cursos — AcademiaPro</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Cursos - AngoEDMAP</title>
+  <link rel="stylesheet" href="css/biblioteca.css">
 </head>
+<body data-page="cursos">
+  <header class="site-header">
+    <a class="brand" href="index.html">AngoEDMAP</a>
+    <nav aria-label="Navegacao principal">
+      <a href="index.html">Inicio</a>
+      <a href="cursos.html" class="active">Cursos</a>
+      <a href="biblioteca.html">Biblioteca</a>
+      <a href="dashboard.html">Painel</a>
+    </nav>
+  </header>
 
-<body>
+  <main>
+    <section class="page-hero">
+      <div>
+        <p class="eyebrow">Biblioteca academica</p>
+        <h1>Escolhe uma area de formacao</h1>
+        <p>Entra numa prateleira digital organizada por disciplinas, livros, manuais e materiais de apoio.</p>
+      </div>
+      <div class="hero-panel">
+        <strong id="totalCursos">4</strong>
+        <span>cursos organizados para estudo guiado</span>
+      </div>
+    </section>
 
-<header>
-  <h1>AcademiaPro</h1>
-  <nav>
-    <a href="index.html">Início</a>
-    <a href="cursos.html">Cursos</a>
-    <a href="biblioteca.html">Biblioteca</a>
-  </nav>
-</header>
+    <section class="toolbar" aria-label="Pesquisa de cursos">
+      <label class="search-field">
+        <span>Pesquisar</span>
+        <input id="courseSearch" type="search" placeholder="Pesquisar por curso ou disciplina">
+      </label>
+      <a class="ghost-button" href="biblioteca.html">Ver biblioteca completa</a>
+    </section>
 
-<section class="hero">
-  <h2>Escolhe o teu curso</h2>
-  <p>Depois serás levado diretamente para a biblioteca de estudos</p>
-</section>
+    <section class="course-grid" id="coursesGrid" aria-live="polite"></section>
+  </main>
 
-<section class="grid-cards">
+  <footer>
+    <p>© 2026 AngoEDMAP. Plataforma educacional angolana.</p>
+  </footer>
 
-  <!-- MATEMÁTICA -->
-  <a href="biblioteca.html?curso=matematica" class="card">
-    <span class="icone">📘</span>
-    <h4>Matemática</h4>
-    <p>Álgebra, geometria e funções</p>
-  </a>
-
-  <!-- FÍSICA -->
-  <a href="biblioteca.html?curso=fisica" class="card">
-    <span class="icone">🔬</span>
-    <h4>Física</h4>
-    <p>Leis de Newton, energia e movimento</p>
-  </a>
-
-  <!-- QUÍMICA -->
-  <a href="biblioteca.html?curso=quimica" class="card">
-    <span class="icone">⚗️</span>
-    <h4>Química</h4>
-    <p>Reações, tabela periódica e ligações</p>
-  </a>
-
-  <!-- INFORMÁTICA -->
-  <a href="biblioteca.html?curso=informatica" class="card">
-    <span class="icone">💻</span>
-    <h4>Informática</h4>
-    <p>Programação, HTML, CSS e lógica</p>
-  </a>
-
-</section>
-
-<footer>
-  <p>© 2026 AcademiaPro</p>
-</footer>
-
+  <script src="js/biblioteca.js"></script>
 </body>
 </html>

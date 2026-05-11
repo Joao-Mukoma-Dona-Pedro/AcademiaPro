@@ -3,93 +3,57 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - AcademiaPro</title>
-  <link rel="stylesheet" href="../plataforma_estudo/css/dashboard.css">
+  <title>Painel - AngoEDMAP</title>
+  <link rel="stylesheet" href="css/biblioteca.css">
 </head>
-
 <body>
+  <header class="site-header">
+    <a class="brand" href="index.html">AngoEDMAP</a>
+    <nav aria-label="Navegacao principal">
+      <a href="index.html">Inicio</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="biblioteca.html">Biblioteca</a>
+      <a href="dashboard.html" class="active">Painel</a>
+    </nav>
+  </header>
 
-<header>
-  <h1>AcademiaPro</h1>
-  <nav>
-    <a href="index.html">Início</a>
-    <a href="cursos.html">Cursos</a>
-    <a href="biblioteca.html">Biblioteca</a>
-    <span style="color:#4ade80; font-weight:700;">
-      Olá, João!
-    </span>
-    <a href="#">Sair</a>
-  </nav>
-</header>
-
-<div class="dashboard">
-  <div class="dashboard-topo">
-    <h2>O teu painel</h2>
-    <p>Continua do ponto onde ficaste.</p>
-  </div>
-
-  <div class="cards-grid" id="cards-container">
-    <!-- Cards vão ser gerados pelo JS -->
-  </div>
-</div>
-
-<footer>
-  <p class="footer-copy">© 2026 AcademiaPro</p>
-</footer>
-
-<script>
-// disciplinas simuladas (como se viessem da base de dados)
-const disciplinas = [
-  {
-    id: 1,
-    nome: "Álgebra",
-    descricao: "Equações, variáveis e funções"
-  },
-  {
-    id: 2,
-    nome: "Física",
-    descricao: "Leis do movimento e energia"
-  },
-  {
-    id: 3,
-    nome: "Química",
-    descricao: "Reações químicas e moléculas"
-  }
-];
-
-// gerar cards
-function carregarDashboard() {
-  const container = document.getElementById("cards-container");
-  container.innerHTML = "";
-
-  disciplinas.forEach(disc => {
-    let progresso = localStorage.getItem("progresso_disciplina_" + disc.id) || 0;
-
-    const card = `
-      <div class="card">
-        <h3>${disc.nome}</h3>
-        <p>${disc.descricao}</p>
-
-        <div class="progresso-barra-fundo">
-          <div class="progresso-barra" style="width: ${progresso}%;"></div>
-        </div>
-
-        <p class="progresso-texto">${progresso}% concluído</p>
-
-        <a href="disciplina.html?id=${disc.id}" 
-           class="btn-primario" style="margin-top:12px; display:inline-block;">
-          Continuar →
-        </a>
+  <main>
+    <section class="page-hero">
+      <div>
+        <p class="eyebrow">Area do estudante</p>
+        <h1>Continua os teus estudos</h1>
+        <p>Acede rapidamente aos cursos principais e retoma disciplinas da biblioteca digital.</p>
       </div>
-    `;
+      <div class="hero-panel">
+        <strong>3</strong>
+        <span>atalhos de estudo para iniciar agora</span>
+      </div>
+    </section>
 
-    container.innerHTML += card;
-  });
-}
+    <section class="course-grid">
+      <a class="course-card" href="biblioteca.html?curso=enfermagem">
+        <span class="course-icon">ENF</span>
+        <h2>Enfermagem</h2>
+        <p>Rever Anatomia, Fisiologia, Farmacologia e materiais clinicos.</p>
+        <span class="card-action">Continuar</span>
+      </a>
+      <a class="course-card" href="biblioteca.html?curso=analises-clinicas">
+        <span class="course-icon">ACL</span>
+        <h2>Analises Clinicas</h2>
+        <p>Consultar materiais de laboratorio, microbiologia e diagnostico.</p>
+        <span class="card-action">Continuar</span>
+      </a>
+      <a class="course-card" href="cursos.html">
+        <span class="course-icon">ALL</span>
+        <h2>Todos os cursos</h2>
+        <p>Explorar a biblioteca completa por area de formacao.</p>
+        <span class="card-action">Explorar</span>
+      </a>
+    </section>
+  </main>
 
-// carregar ao abrir
-window.onload = carregarDashboard;
-</script>
-
+  <footer>
+    <p>© 2026 AngoEDMAP</p>
+  </footer>
 </body>
 </html>

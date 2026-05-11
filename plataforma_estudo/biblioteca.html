@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Digital - AngoEDMAP</title>
+  <link rel="stylesheet" href="css/biblioteca.css">
+</head>
+<body data-page="biblioteca">
+  <header class="site-header">
+    <a class="brand" href="index.html">AngoEDMAP</a>
+    <nav aria-label="Navegacao principal">
+      <a href="index.html">Inicio</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="biblioteca.html" class="active">Biblioteca</a>
+      <a href="dashboard.html">Painel</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="library-shell">
+      <aside class="library-sidebar" aria-label="Cursos disponiveis">
+        <p class="eyebrow">Cursos</p>
+        <div id="courseTabs" class="course-tabs"></div>
+      </aside>
+
+      <section class="library-content">
+        <div class="library-top">
+          <div>
+            <p class="breadcrumb">
+              <a href="index.html">Inicio</a>
+              <span>/</span>
+              <a href="cursos.html">Cursos</a>
+              <span>/</span>
+              <strong id="breadcrumbCourse">Biblioteca</strong>
+            </p>
+            <h1 id="libraryTitle">Biblioteca Digital</h1>
+            <p id="libraryDescription">Materiais organizados por curso, disciplina e tipo de conteudo.</p>
+          </div>
+          <a id="openCourseButton" class="primary-button" href="cursos.html">Ver cursos</a>
+        </div>
+
+        <div class="filters">
+          <label class="search-field">
+            <span>Pesquisar</span>
+            <input id="librarySearch" type="search" placeholder="Livro, disciplina, manual ou PDF">
+          </label>
+          <label class="select-field">
+            <span>Disciplina</span>
+            <select id="disciplineFilter">
+              <option value="todas">Todas as disciplinas</option>
+            </select>
+          </label>
+          <label class="select-field">
+            <span>Tipo</span>
+            <select id="typeFilter">
+              <option value="todos">Todos os materiais</option>
+              <option value="Livro digital">Livro digital</option>
+              <option value="Manual">Manual</option>
+              <option value="PDF">PDF</option>
+              <option value="Guia de estudo">Guia de estudo</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="stats-row" id="libraryStats"></div>
+        <div class="discipline-shelves" id="disciplineShelves" aria-live="polite"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 AngoEDMAP. Biblioteca digital para aprendizagem acessivel.</p>
+  </footer>
+
+  <script src="js/biblioteca.js"></script>
+</body>
+</html>
